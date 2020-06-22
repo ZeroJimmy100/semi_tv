@@ -1,0 +1,12 @@
+#wrapper{
+    width: 970px;
+    min-height: 900px;
+    background-color: aqua;
+    margin: 0px auto;
+}
+
+li{
+    list-style-type: none;
+} 
+
+

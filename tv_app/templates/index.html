@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="wrapper">
+        <form action='/shows' method='post'>
+        {% csrf_token %}
+        <h1>All Shows</h1>
+        <ul>
+            {% for shows in these_show %}
+            <li>{{ shows.id }} {{ shows.title }}  {{ shows.network }} {{ shows.release_date }} 
+                <a href="shows/{{ shows.id }}">Show</a> | 
+                <a href="shows/{{ shows.id }}/edit">Edit</a> |
+                <a href="shows/{{shows.id}}/delete">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+        
+
+    </div>
+    </form>
+    <a href="shows/create">Add a New Show</a>
+</body>
+
+</html>
